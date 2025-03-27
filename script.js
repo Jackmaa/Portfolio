@@ -12,15 +12,15 @@ const camera = new THREE.PerspectiveCamera(
   2000
 );
 camera.position.set(0, 0, 2); // Met la caméra plus proche
+const textureLoader = new THREE.TextureLoader();
 
 // Renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000, 1); // Black background
+//renderer.setClearColor(0x000000, 1); // Black background
 document.body.appendChild(renderer.domElement);
 
 // Metallic Material
-const textureLoader = new THREE.TextureLoader();
 const metalTexture = textureLoader.load("./Metal048C_1K-JPG_Roughness.jpg");
 
 const material = new THREE.MeshStandardMaterial({
@@ -54,7 +54,7 @@ loader.load("logoV.glb", (gltf) => {
   logo.rotation.z += 0.125;
   logo.rotation.y += 1.55;
   logo.scale.set(10, 10, 10); // Appliquer l'échelle après chargement
-  logo.position.set(0, 0, 0);
+  logo.position.set(0, 0.1, 0);
   scene.add(logo);
 });
 
