@@ -1,0 +1,88 @@
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+// Scene
+const scene = new THREE.Scene();
+
+// Camera
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.5,
+  2000
+);
+camera.position.set(0, 0, 2); // Met la caméra plus proche
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 1); // Black background
+document.body.appendChild(renderer.domElement);
+
+// Metallic Material
+const textureLoader = new THREE.TextureLoader();
+const metalTexture = textureLoader.load("./Metal048C_1K-JPG_Roughness.jpg");
+
+const material = new THREE.MeshStandardMaterial({
+  color: 0xffd700, //gold color
+  metalness: 1,
+  roughness: 0.2,
+  map: metalTexture,
+});
+
+//Mouse movement tracking
+const mouse = new THREE.Vector2();
+
+window.addEventListener("mousemove", (e) => {
+  //Normalize mouse position [-1, 1] for Three.js 3D space
+
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+let logo; // Déclaré globalement
+
+let loader = new GLTFLoader();
+loader.load("logoV.glb", (gltf) => {
+  logo = gltf.scene;
+  logo.traverse((child) => {
+    if (child.isMesh) {
+      child.material = material;
+    }
+  });
+  logo.rotation.x += 0.15;
+  logo.rotation.z += 0.125;
+  logo.rotation.y += 1.55;
+  logo.scale.set(10, 10, 10); // Appliquer l'échelle après chargement
+  logo.position.set(0, 0, 0);
+  scene.add(logo);
+});
+
+const light = new THREE.PointLight(0xffffff, 20, 0, 1.5);
+light.position.set(0, 0, 0.5);
+scene.add(light);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+scene.add(ambientLight);
+
+// Animation Loop
+function animate() {
+  requestAnimationFrame(animate);
+
+  // if (logo) {
+  //   logo.rotation.y += 0.01; // Ajout d'une rotation fluide en complément
+  // }
+
+  light.position.x = mouse.x;
+  light.position.y = mouse.y;
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// Resize Handling
+window.addEventListener("resize", () => {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+});

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+      }
+      h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="ml-auto items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-300 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
+    >
+      <ul
+        class="flex gap-x-4 justify-content-around text-xl font-medium text-black dark:text-yellow-500"
+      >
+        <li>
+          <button
+            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
+            id="home"
+          >
+            Home
+          </button>
+        </li>
+        <li>
+          <button
+            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
+            id="about"
+          >
+            About
+          </button>
+        </li>
+        <li>
+          <button
+            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
+            id="projects"
+          >
+            Projects
+          </button>
+        </li>
+        <li>
+          <button
+            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
+            id="contact"
+          >
+            Contact
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <h1 id="test">Bien ma gueule</h1>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+          "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
