@@ -5,16 +5,3 @@ body {
 canvas {
   display: block;
 }
-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2rem;
-  font-family: sans-serif;
-}
-
-main {
-  color: oklch(0.769 0.188 70.08);
-}
