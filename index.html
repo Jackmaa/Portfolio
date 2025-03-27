@@ -8,47 +8,133 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav
-      class="ml-auto items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-300 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-    >
-      <ul
-        class="flex gap-x-4 justify-content-around text-xl font-medium text-black dark:text-yellow-500"
-      >
-        <li>
-          <button
-            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
-            id="home"
-          >
-            Home
-          </button>
-        </li>
-        <li>
-          <button
-            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
-            id="about"
-          >
-            About
-          </button>
-        </li>
-        <li>
-          <button
-            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
-            id="projects"
-          >
-            Projects
-          </button>
-        </li>
-        <li>
-          <button
-            class="bg-slate-950 hover:bg-yellow-700 p-3 rounded-xl"
-            id="contact"
-          >
-            Contact
-          </button>
-        </li>
-      </ul>
-    </nav>
+    <header class="bg-black shadow-sm dark:shadow-none">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex-1 md:flex md:items-center md:gap-12">
+            <a class="block text-amber-500 dark:text-amber-500" href="#">
+              <span class="sr-only">Home</span>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 440 337"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0 8.99999C6.33333 9.33332 22.9 15.7 38.5 38.5L139 168.5L28 313C28 313 13 330 0.5 330V336.5H76V330C71.5 328.167 62.9 323.9 64.5 321.5C64.6667 319.833 65.3 316.5 66.5 316.5L157.5 198.5L197.5 248.5L145 314.5C140.333 319.667 128.7 330 119.5 330V336.5H195.5V330C191 328.833 182.4 325.5 184 321.5C183.6 318.7 206.167 289 217.5 274.5C229 288.667 251.9 317.9 251.5 321.5C251 326 244 330 241 330V336.5H320.5V330C316.667 329.5 307.6 327.1 302 321.5C294.4 315.9 258.167 268.833 241 246L277 198.5L369.5 318C371.333 321 372.1 327.6 360.5 330V336.5H440V330C435.667 328.667 425 324.4 417 318C409 311.6 335.333 216 299.5 169L412 25.5C418 19.3333 431.9 7.39999 439.5 8.99999V1L360 0V8.99999C363.5 8.99999 370.5 10.5 370.5 16.5C373.3 16.5 310 99.1667 278 140.5L240.5 92.5C261.833 61.6667 307.6 1.79997 320 8.99999V0H240.5V8.99999C247.333 9.16666 258 13 246 27C234 41 222.333 57.1667 218 63.5L184.5 20C183.167 16.8333 183.3 10.2 194.5 8.99999V0H119V8.99999C124.5 5.66666 148 17.2 198 90L157.5 140L65 20C64.3333 16.3333 65.7 8.99999 76.5 8.99999V0H0V8.99999ZM219.5 118.5L180.5 169L219.5 220L259.5 169L219.5 118.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="md:flex md:items-center md:gap-12">
+            <nav aria-label="Global" class="hidden md:block">
+              <ul class="flex items-center gap-6 text-sm">
+                <li>
+                  <a
+                    class="text-transparent hover:text-gray-500/75 dark:text-white dark:hover:text-white/75 relative transition-all w-min-content before:w-0 before:h-0.5 before:absolute before:bottom-0 before:right-0 before:bg-amber-400 before:transition-all before:duration-500 hover:before:w-full hover:before:left-0 hover:before:bg-amber-500"
+                    href="#"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-transparent hover:text-gray-500/75 dark:text-white dark:hover:text-white/75 relative transition-all w-min-content before:w-0 before:h-0.5 before:absolute before:bottom-0 before:right-0 before:bg-amber-400 before:transition-all before:duration-500 hover:before:w-full hover:before:left-0 hover:before:bg-amber-500"
+                    href="#"
+                  >
+                    Projects
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-transparent hover:text-gray-500/75 dark:text-white dark:hover:text-white/75 relative transition-all w-min-content before:w-0 before:h-0.5 before:absolute before:bottom-0 before:right-0 before:bg-amber-400 before:transition-all before:duration-500 hover:before:w-full hover:before:left-0 hover:before:bg-amber-500"
+                    href="#"
+                  >
+                    Blog
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="relative md:block">
+              <button
+                id="toggle-dashboard-menu"
+                type="button"
+                class="overflow-hidden rounded-full border border-gray-300 shadow-inner dark:border-gray-600"
+              >
+                <span class="sr-only">Toggle dashboard menu</span>
+
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                  class="size-10 hidden md:block object-cover"
+                />
+              </button>
+
+              <div class="absolute end-0 z-10 mt-0.5 w-56" role="menu">
+                <div
+                  id="menu-dashboard"
+                  class="p-2 hidden bg-white rounded-lg shadow-lg dark:bg-black/10"
+                >
+                  <a
+                    href="#"
+                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 transition dark:text-white hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
+                    role="menuitem"
+                  >
+                    My GitHub
+                  </a>
+
+                  <a
+                    href="#"
+                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 transition dark:text-white hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
+                    role="menuitem"
+                  >
+                    My LinkedIn
+                  </a>
+
+                  <a
+                    href="#"
+                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 transition dark:text-white hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
+                    role="menuitem"
+                  >
+                    My CV
+                  </a>
+                </div>
+              </div>
+
+              <div class="block md:hidden">
+                <button
+                  class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <h1 id="test">Bien ma gueule</h1>
+    <script src="./main.js"></script>
     <script type="importmap">
       {
         "imports": {

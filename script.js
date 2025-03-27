@@ -24,7 +24,7 @@ const textureLoader = new THREE.TextureLoader();
 const metalTexture = textureLoader.load("./Metal048C_1K-JPG_Roughness.jpg");
 
 const material = new THREE.MeshStandardMaterial({
-  color: 0xffd700, //gold color
+  color: 0xfd9a00, //gold color
   metalness: 1,
   roughness: 0.2,
   map: metalTexture,
