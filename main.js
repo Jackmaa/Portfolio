@@ -12,9 +12,9 @@ const granimInstance = new Granim({
   states: {
     "default-state": {
       gradients: [
-        ["#a8a9ad", "#272727", "#fd9a00"], // Gradient 1
-        ["#fd9a00", "#a8a9ad", "#272727"], // Gradient 2
-        ["#272727", "#a8a9ad", "#fd9a00"], // Gradient 3
+        ["#a8a9ad", "#c0c0c0", "#fd9a00"], // Gradient 1
+        ["#fd9a00", "#a8a9ad", "#c0c0c0"], // Gradient 2
+        ["#272727", "#c0c0c0", "#fd9a00"], // Gradient 3
       ],
       transitionSpeed: 3000, // Speed of gradient transitions
     },

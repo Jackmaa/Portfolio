@@ -38,6 +38,9 @@ window.addEventListener("mousemove", (e) => {
 
   mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+  pointLight.position.x = mouse.x * 5;
+  pointLight.position.y = mouse.y * 5;
 });
 
 let logo; // Déclaré globalement
