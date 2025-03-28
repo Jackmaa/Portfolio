@@ -1,6 +1,3 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-
 // Scene
 const scene = new THREE.Scene();
 
@@ -11,13 +8,13 @@ const camera = new THREE.PerspectiveCamera(
   0.5,
   2000
 );
-camera.position.set(0, 0, 2); // Met la caméra plus proche
+camera.position.set(0, 0, 2);
+
 const textureLoader = new THREE.TextureLoader();
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-//renderer.setClearColor(0x000000, 1); // Black background
 document.body.appendChild(renderer.domElement);
 
 // Metallic Material
@@ -30,12 +27,15 @@ const material = new THREE.MeshStandardMaterial({
   map: metalTexture,
 });
 
+const light = new THREE.PointLight(0xffffff, 20, 0, 1.5);
+light.position.set(0, 0, 0.5);
+scene.add(light);
+
 //Mouse movement tracking
 const mouse = new THREE.Vector2();
 
 window.addEventListener("mousemove", (e) => {
   //Normalize mouse position [-1, 1] for Three.js 3D space
-
   mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
 
@@ -45,7 +45,8 @@ window.addEventListener("mousemove", (e) => {
 
 let logo; // Déclaré globalement
 
-let loader = new GLTFLoader();
+// Use the GLTFLoader from THREE namespace
+const loader = new THREE.GLTFLoader();
 loader.load("logoV.glb", (gltf) => {
   logo = gltf.scene;
   logo.traverse((child) => {
@@ -61,20 +62,12 @@ loader.load("logoV.glb", (gltf) => {
   scene.add(logo);
 });
 
-const light = new THREE.PointLight(0xffffff, 20, 0, 1.5);
-light.position.set(0, 0, 0.5);
-scene.add(light);
-
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
 // Animation Loop
 function animate() {
   requestAnimationFrame(animate);
-
-  // if (logo) {
-  //   logo.rotation.y += 0.01; // Ajout d'une rotation fluide en complément
-  // }
 
   light.position.x = mouse.x;
   light.position.y = mouse.y;
