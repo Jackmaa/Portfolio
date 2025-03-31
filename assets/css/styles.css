@@ -1,0 +1,315 @@
+@import url("https://use.typekit.net/ers2qgl.css");
+/*----------------------RESET -------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.6rem;
+  min-height: 100vh;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+a,
+p,
+ul,
+li,
+label {
+  text-decoration: none;
+  list-style: none;
+  line-height: 1.35rem;
+  padding: 0;
+}
+
+figcaption {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.75rem;
+}
+
+:root {
+  --primary-color: rgb(0, 255, 255); /* Cyan neon */
+  --secondary-color: rgb(138, 44, 226); /* Electric violet */
+  --background-color: hsl(0, 0%, 5%); /* Deep black */
+  --glow-color: rgba(0, 255, 255, 0.8); /* Cyan glow */
+  --box-shadow: 0 0 10px var(--glow-color), 0 0 40px var(--glow-color);
+}
+
+body {
+  background: var(--background-color);
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+nav svg:hover {
+  stroke: var(--primary-color);
+  filter: drop-shadow(0 0 10px var(--primary-color)) drop-shadow(0 0 20px var(--secondary-color));
+  transition: all 0.3s ease-in-out;
+}
+nav svg:hover path {
+  stroke: var(--primary-color);
+}
+nav .burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+nav .burger-menu.open span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+nav .burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+nav .burger-menu.open span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+nav .burger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+nav .nav-links .link-wrapper {
+  width: 6rem;
+}
+@media screen and (min-width: 768px) {
+  nav .nav-links {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--background-color);
+    padding: 1rem 0;
+  }
+}
+nav .nav-links.active {
+  display: flex;
+}
+@media (max-width: 768px) {
+  nav .burger-menu {
+    display: flex;
+  }
+}
+
+a {
+  font-family: "ff-chambers-sans-web", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a .cyberpunk-link {
+  text-align: center;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+a .cyberpunk-link::before, a .cyberpunk-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: var(--glow-color);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+a .cyberpunk-link:hover::before, a .cyberpunk-link:hover::after {
+  opacity: 0.5;
+}
+a .cyberpunk-link:hover {
+  color: white;
+  animation: glitch 0.2s forwards;
+}
+a .cyberpunk-link:active {
+  transform: scale(0.95);
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 3px 3px var(--secondary-color), -3px -3px var(--primary-color);
+  }
+  50% {
+    text-shadow: -3px 3px var(--secondary-color), 3px -3px var(--secondary-color);
+  }
+  100% {
+    text-shadow: 3px -3px var(--secondary-color), -3px 3px var(--secondary-color);
+  }
+}
+/*----------------------BUTTONS -------------------------------*/
+button.glitch {
+  width: 9rem;
+  font-family: "ff-chambers-sans-web", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+button.glitch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: var(--glow-color);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:is(.burger-menu) {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+button.glitch:hover {
+  color: white;
+  box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
+}
+
+button.glitch:hover::before {
+  opacity: 0.5;
+}
+
+button.glitch:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+button.glitch:hover {
+  animation: glitch 0.2s forwards;
+}
+
+.hero-container {
+  font-family: "ff-chambers-sans-web", sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: black;
+}
+
+/* Scanlines effect */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, rgba(0, 255, 255, 0.05) 0px, rgba(0, 255, 255, 0.05) 1px, transparent 3px, transparent 4px);
+  animation: scanlines 0.3s linear infinite;
+}
+
+@keyframes scanlines {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+.hero-content {
+  text-align: center;
+  color: cyan;
+  max-width: 800px;
+  padding: 20px;
+  pointer-events: none;
+}
+.hero-content span:nth-child(3) {
+  margin-left: -10px;
+}
+
+.glitch-text {
+  line-height: 100px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  text-align: end;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.glitch-subtitle {
+  font-size: 1.5rem;
+  color: rgba(0, 255, 255, 0.8);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: rgba(173, 216, 230, 0.8);
+  margin-top: 15px;
+  max-width: 600px;
+  line-height: 1.5;
+}/*# sourceMappingURL=styles.css.map */
