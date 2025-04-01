@@ -302,7 +302,7 @@ button.glitch:hover {
 
 .hero-content {
   text-align: center;
-  color: cyan;
+  color: var(--primary-color);
   max-width: 800px;
   padding: 20px;
   pointer-events: none;
@@ -364,17 +364,7 @@ section#projects {
   text-align: center;
   position: relative;
   animation: glitch 0.5s infinite alternate;
-}
-
-@keyframes glitch {
-  0% {
-    transform: skew(-2deg);
-    text-shadow: 2px 2px cyan, -2px -2px magenta;
-  }
-  100% {
-    transform: skew(2deg);
-    text-shadow: -2px -2px cyan, 2px 2px magenta;
-  }
+  animation-iteration-count: 3; /* Stops the animation after 3 iterations */
 }
 
 .close-btn {
@@ -389,7 +379,7 @@ section#projects {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 15px;
-  background: cyan;
+  background: var(--primary-color);
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -397,19 +387,47 @@ section#projects {
 }
 
 .view-btn:hover {
-  background: magenta;
+  background: var(--secondary-color);
 }
 
 .project-card {
-  background: rgba(0, 0, 0, 0.8);
-  outline-style: 1px solid cyan;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  outline-style: 1px solid var(--primary-color);
   border-radius: 1rem;
   text-align: center;
   transition: transform 0.1s ease-out;
   will-change: transform;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(
+      145deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    filter: blur(8px);
+    opacity: 0.6;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+  }
 }
 
 .project-card:hover {
-  box-shadow: 0 0 1.5rem cyan;
-  transform: scale(1.05);
+  box-shadow: 0 0 1.5rem var(--primary-color);
+  transform: scale(1.05) rotate(1deg);
+  border-color: var(--primary-color);
+
+  &::before {
+    opacity: 1;
+  }
 }

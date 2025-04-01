@@ -1,4 +1,5 @@
 const username = "Jackmaa";
+const selectedRepos = ["codoc", "ECF-1", "ECF-2", "nihon-ECF-3"]; // Add repo names you want to display
 
 async function fetchProjects() {
   const response = await fetch(
@@ -6,17 +7,22 @@ async function fetchProjects() {
   );
   const repos = await response.json();
 
-  const projectsContainer = document.querySelector("#projects");
-  projectsContainer.innerHTML = "";
+  // Filter repos based on the selectedRepos array
+  const filteredRepos = repos.filter((repo) =>
+    selectedRepos.includes(repo.name)
+  );
 
-  repos.forEach((repo) => {
+  const projectsContainer = document.querySelector("#projects");
+  projectsContainer.innerHTML = ""; // Clears the container before adding new projects
+
+  filteredRepos.forEach((repo) => {
     const projectCard = document.createElement("div");
     projectCard.classList.add("project-card");
     projectCard.innerHTML = `
       <div class="card-content">
         <h3>${repo.name}</h3>
         <p>${repo.description || "No description available"}</p>
-         <button class="info-btn" data-name="${repo.name}" data-description="${
+        <button class="info-btn" data-name="${repo.name}" data-description="${
       repo.description
     }" data-url="${repo.html_url}">
           More Info
@@ -24,11 +30,13 @@ async function fetchProjects() {
       </div>
     `;
     projectsContainer.appendChild(projectCard);
-
-    addTiltEffect();
   });
+
+  // Attach event listeners after all projects are added
   addLightboxEvents();
 }
+
+document.addEventListener("DOMContentLoaded", fetchProjects);
 
 document.addEventListener("DOMContentLoaded", fetchProjects);
 
