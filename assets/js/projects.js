@@ -22,21 +22,20 @@ async function fetchProjects() {
       <div class="card-content">
         <h3>${repo.name}</h3>
         <p>${repo.description || "No description available"}</p>
-        <button class="info-btn" data-name="${repo.name}" data-description="${
-      repo.description
-    }" data-url="${repo.html_url}">
+        <button class="glitch info-btn" data-name="${
+          repo.name
+        }" data-description="${repo.description}" data-url="${repo.html_url}">
           More Info
         </button>
       </div>
     `;
     projectsContainer.appendChild(projectCard);
+    addTiltEffect(); // Add tilt effect to each card
   });
 
   // Attach event listeners after all projects are added
   addLightboxEvents();
 }
-
-document.addEventListener("DOMContentLoaded", fetchProjects);
 
 document.addEventListener("DOMContentLoaded", fetchProjects);
 

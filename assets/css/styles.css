@@ -314,11 +314,6 @@ button.glitch:hover {
 }
 
 /*----------------------PROJECTS -------------------------------*/
-section#projects {
-  display: grid;
-  position: relative;
-}
-
 .lightbox {
   position: fixed; /* Stay fixed on screen */
   top: 0;
@@ -366,18 +361,53 @@ section#projects {
   background: var(--secondary-color);
 }
 
+/* Style for the Projects Section */
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with flexible columns */
+  gap: 2rem; /* Space between cards */
+  padding: 2rem;
+  justify-items: center; /* Center the cards inside the grid */
+}
+
+/* Style for individual project cards */
 .project-card {
-  background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-  border: 2px solid transparent;
-  background-clip: padding-box;
   position: relative;
   overflow: hidden;
   outline-style: 1px solid var(--primary-color);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
+  color: white;
   text-align: center;
-  transition: transform 0.1s ease-out;
-  will-change: transform;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 2rem;
+  height: 350px;
+  max-width: 300px;
+  width: 100%;
 }
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+/* Hover effect for project cards */
+.project-card:hover {
+  box-shadow: 0 0 2rem var(--primary-color);
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
 .project-card::before {
   content: "";
   position: absolute;
@@ -385,19 +415,14 @@ section#projects {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
-  background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+  border-radius: 1.5rem;
   filter: blur(8px);
   opacity: 0.6;
   z-index: -1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.project-card:hover {
-  box-shadow: 0 0 1.5rem var(--primary-color);
-  transform: scale(1.05) rotate(1deg);
-  border-color: var(--primary-color);
-}
 .project-card:hover::before {
   opacity: 1;
+  filter: blur(10px);
 }/*# sourceMappingURL=styles.css.map */
