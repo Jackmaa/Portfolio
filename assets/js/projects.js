@@ -57,7 +57,6 @@ function addTiltEffect() {
 function addLightboxEvents() {
   const lightbox = document.getElementById("lightbox");
   const closeButton = document.querySelector(".close-btn");
-
   const infoButtons = document.querySelectorAll(".info-btn");
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxDescription = document.getElementById("lightbox-description");
@@ -65,6 +64,7 @@ function addLightboxEvents() {
 
   infoButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      console.log("Button clicked:", this);
       lightboxTitle.textContent = this.getAttribute("data-name");
       lightboxDescription.textContent = this.getAttribute("data-description");
       lightboxLink.href = this.getAttribute("data-url");

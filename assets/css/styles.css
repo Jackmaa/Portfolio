@@ -316,21 +316,23 @@ button.glitch:hover {
 /*----------------------PROJECTS -------------------------------*/
 section#projects {
   display: grid;
+  position: relative;
 }
-section#projects .lightbox {
-  position: fixed;
+
+.lightbox {
+  position: fixed; /* Stay fixed on screen */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  display: none; /* Hide by default */
   align-items: center;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above everything */
 }
-section#projects .lightbox-content {
+
+.lightbox-content {
   background: black;
   color: white;
   padding: 20px;
@@ -339,6 +341,7 @@ section#projects .lightbox-content {
   position: relative;
   animation: glitch 0.5s infinite alternate;
 }
+
 @keyframes glitch {
   0% {
     transform: skew(-2deg);
@@ -349,14 +352,15 @@ section#projects .lightbox-content {
     text-shadow: -2px -2px cyan, 2px 2px magenta;
   }
 }
-section#projects .close-btn {
+.close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 24px;
   cursor: pointer;
 }
-section#projects .view-btn {
+
+.view-btn {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 15px;
@@ -366,7 +370,8 @@ section#projects .view-btn {
   font-weight: bold;
   transition: 0.3s;
 }
-section#projects .view-btn:hover {
+
+.view-btn:hover {
   background: magenta;
 }
 
