@@ -63,6 +63,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 10;
+  margin: 1rem;
 }
 
 nav {
@@ -105,21 +106,27 @@ nav .burger-menu span {
   transition: transform 0.3s ease;
 }
 nav .nav-links {
-  display: flex;
   gap: 2rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 nav .nav-links .link-wrapper {
   width: 6rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   nav .nav-links {
     flex-direction: row;
     justify-content: space-between;
+    gap: 0rem;
   }
 }
-@media (max-width: 768px) {
+@media screen and (min-width: 920px) {
+  nav .nav-links {
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 800px) {
   nav .nav-links {
     display: none;
     position: absolute;
@@ -133,7 +140,7 @@ nav .nav-links .link-wrapper {
 nav .nav-links.active {
   display: flex;
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   nav .burger-menu {
     display: flex;
   }
@@ -365,10 +372,25 @@ button.glitch:hover {
 #projects {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Responsive grid with flexible columns */
+  grid-template-columns: repeat(1fr); /* Responsive grid with flexible columns */
   gap: 2rem; /* Space between cards */
   align-items: center; /* Center the cards inside the grid */
   justify-items: center;
+}
+@media screen and (min-width: 768px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+}
+@media screen and (min-width: 900px) {
+  #projects {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+  }
+}
+@media screen and (min-width: 1200px) {
+  #projects {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+  }
 }
 
 /* Style for individual project cards */
@@ -379,7 +401,7 @@ button.glitch:hover {
   border-radius: 1.5rem;
   color: white;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);

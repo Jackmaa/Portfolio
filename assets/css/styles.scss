@@ -62,6 +62,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 10;
+  margin: 1rem;
 }
 
 nav {
@@ -111,8 +112,8 @@ nav {
   }
 
   .nav-links {
-    display: flex;
     gap: 2rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
 
@@ -120,12 +121,16 @@ nav {
       width: 6rem;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 800px) {
       flex-direction: row;
       justify-content: space-between;
+      gap: 0rem;
+    }
+    @media screen and (min-width: 920px) {
+      gap: 2rem;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 800px) {
       display: none;
       position: absolute;
       top: 100%;
@@ -140,7 +145,7 @@ nav {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .burger-menu {
       display: flex;
     }
@@ -392,12 +397,21 @@ button.glitch:hover {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(
-    4,
     1fr
   ); /* Responsive grid with flexible columns */
   gap: 2rem; /* Space between cards */
   align-items: center; /* Center the cards inside the grid */
   justify-items: center;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+  }
 }
 
 /* Style for individual project cards */
@@ -408,7 +422,7 @@ button.glitch:hover {
   border-radius: 1.5rem;
   color: white;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   padding: 2rem;
