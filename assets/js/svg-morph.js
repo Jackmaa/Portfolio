@@ -24,8 +24,8 @@ gsap
     yoyo: true,
     onUpdate: function () {
       // Add a glow effect by animating the stroke color
-      const glowColor = `rgba(0, 255, 255,0.8)`;
-      const glowColor2 = `rgba(138, 44, 226,0.8)`;
-      svg.style.filter = `drop-shadow(0px 0px 10px ${glowColor}) drop-shadow(0px 0px 40px ${glowColor2})`;
+      const glowColor = `rgba(0, 255, 255, ${Math.random() / 0.5 + 0.5})`;
+      const glowColor2 = `rgba(138, 44, 226,${Math.random() / 0.5 + 0.5})`;
+      svg.style.filter = `drop-shadow(0px 0px 10px ${glowColor}) drop-shadow(0px 0px 20px ${glowColor2})`;
     },
   });
