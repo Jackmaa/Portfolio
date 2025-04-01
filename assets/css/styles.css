@@ -8,6 +8,7 @@
 }
 
 body {
+  font-family: "ff-chambers-sans-web", sans-serif;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,8 @@ body {
   scroll-behavior: smooth;
   line-height: 1.6rem;
   min-height: 100vh;
+  background: var(--background-color);
+  text-align: center;
 }
 
 img {
@@ -54,11 +57,7 @@ h6 {
   --box-shadow: 0 0 10px var(--glow-color), 0 0 40px var(--glow-color);
 }
 
-body {
-  background: var(--background-color);
-  text-align: center;
-}
-
+/*----------------------HEADER -------------------------------*/
 header {
   width: 100%;
   position: fixed;
@@ -246,6 +245,7 @@ button.glitch:hover {
   animation: glitch 0.2s forwards;
 }
 
+/*----------------------HERO -------------------------------*/
 .hero-container {
   font-family: "ff-chambers-sans-web", sans-serif;
   position: relative;
@@ -363,11 +363,12 @@ button.glitch:hover {
 
 /* Style for the Projects Section */
 #projects {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with flexible columns */
+  grid-template-columns: repeat(4, 1fr); /* Responsive grid with flexible columns */
   gap: 2rem; /* Space between cards */
-  padding: 2rem;
-  justify-items: center; /* Center the cards inside the grid */
+  align-items: center; /* Center the cards inside the grid */
+  justify-items: center;
 }
 
 /* Style for individual project cards */
@@ -383,9 +384,12 @@ button.glitch:hover {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 2rem;
+  margin: 2rem;
   height: 350px;
   max-width: 300px;
   width: 100%;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
 }
 
 .project-card h3 {
