@@ -1,4 +1,3 @@
-@import url("https://use.typekit.net/ers2qgl.css");
 /*----------------------RESET -------------------------------*/
 *,
 *::before,
@@ -437,7 +436,7 @@ button.glitch:hover {
   flex-direction: column; /* Stack items vertically */
 }
 
-.project-card h3 {
+.project-card h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -498,7 +497,7 @@ button.glitch:hover {
   width: 4px;
   background: var(--primary-color);
   height: var(--timeline-height);
-  max-height: 678px;
+  max-height: 675px;
   transition: height 0.3s ease-in-out;
 }
 

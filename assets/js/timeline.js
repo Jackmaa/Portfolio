@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     },
-    { threshold: 0.1 }
+    { threshold: 0.6 }
   ); // Lower threshold helps detect elements earlier
 
   // Observe all timeline items

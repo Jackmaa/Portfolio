@@ -20,7 +20,7 @@ async function fetchProjects() {
     projectCard.classList.add("project-card");
     projectCard.innerHTML = `
       <div class="card-content">
-        <h3>${repo.name}</h3>
+        <h2>${repo.name}</h2>
         <p>${repo.description || "No description available"}</p>
         <button class="glitch info-btn" data-name="${
           repo.name
