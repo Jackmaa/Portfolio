@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".timeline-item");
   const timeline = document.querySelector(".timeline");
 
-  if (!timeline) return; // Safety check
+  if (!timeline || items.length === 0) return; // Safety check
 
   let observer = new IntersectionObserver(
     (entries) => {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Recalculate the timeline height based on visible items
+      // Get all currently visible timeline items
       visibleItems = [...items].filter((item) =>
         item.classList.contains("visible")
       );
@@ -30,9 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
           let startY =
             firstVisible.getBoundingClientRect().top + window.scrollY;
           let endY =
-            lastVisible.getBoundingClientRect().bottom + window.scrollY; // Using bottom for better alignment
+            lastVisible.getBoundingClientRect().bottom + window.scrollY;
 
-          let newHeight = Math.max(endY - startY, 0); // +20px buffer to ensure full coverage
+          let newHeight = Math.max(endY - startY, 0);
+
+          // If the last timeline item is fully visible, add an extra buffer
+          if (
+            visibleItems[visibleItems.length - 1] === items[items.length - 1]
+          ) {
+            newHeight += 100; // Adjust this value based on your design
+          }
+
           timeline.style.setProperty("--timeline-height", `${newHeight}px`);
         }
       }

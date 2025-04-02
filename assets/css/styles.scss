@@ -484,20 +484,21 @@ button.glitch:hover {
 /*----------------------ABOUT -------------------------------*/
 
 .timeline {
-  --timeline-height: 0px; /* Default to 0px */
+  --timeline-height: 0px;
   position: relative;
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 0; /* Place the timeline line on the left */
-  top: 90px; /* Starts at the top of the container */
+  left: 0;
+  top: 95px;
   width: 4px;
   background: #00f5ff;
   height: var(--timeline-height);
+  max-height: 675px;
   transition: height 0.3s ease-in-out;
 }
 
@@ -517,11 +518,11 @@ button.glitch:hover {
 
 .timeline-dot {
   position: absolute;
-  top: 50%; /* Align the dot vertically in the middle of the timeline item */
-  left: -14px; /* Move it to the left of the timeline */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 12px;
-  height: 12px;
+  top: 50%;
+  left: -14px;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
   background: #00f5ff;
   border-radius: 50%;
 }
