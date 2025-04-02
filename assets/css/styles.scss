@@ -48,10 +48,10 @@ h6 {
   line-height: 1.75rem;
 }
 :root {
-  --primary-color: rgb(0, 255, 255); /* Cyan neon */
-  --secondary-color: rgb(226, 44, 211); /* Electric violet */
-  --background-color: hsl(0, 0%, 5%); /* Deep black */
-  --glow-color: rgba(0, 255, 255, 0.8); /* Cyan glow */
+  --primary-color: rgb(0, 255, 255);
+  --secondary-color: rgb(226, 44, 211);
+  --background-color: hsl(0, 0%, 5%);
+  --glow-color: rgba(0, 255, 255, 0.8);
   --box-shadow: 0 0 10px var(--glow-color), 0 0 40px var(--glow-color);
 }
 
@@ -279,8 +279,6 @@ button.glitch:hover {
   overflow: hidden;
   background: black;
 }
-
-/* Scanlines effect */
 .hero-container::before {
   content: "";
   position: absolute;
@@ -345,16 +343,16 @@ button.glitch:hover {
 /*----------------------PROJECTS -------------------------------*/
 
 .lightbox {
-  position: fixed; /* Stay fixed on screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
-  display: none; /* Hide by default */
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensure it's above everything */
+  z-index: 1000;
 }
 
 .lightbox-content {
@@ -365,7 +363,7 @@ button.glitch:hover {
   text-align: center;
   position: relative;
   animation: glitch 0.5s infinite alternate;
-  animation-iteration-count: 3; /* Stops the animation after 3 iterations */
+  animation-iteration-count: 3;
 }
 
 .close-btn {
@@ -391,30 +389,26 @@ button.glitch:hover {
   background: var(--secondary-color);
 }
 
-/* Style for the Projects Section */
 #projects {
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(
-    1fr
-  ); /* Responsive grid with flexible columns */
-  gap: 2rem; /* Space between cards */
-  align-items: center; /* Center the cards inside the grid */
+  grid-template-columns: repeat(1fr);
+  gap: 2rem;
+  align-items: center;
   justify-items: center;
   margin: 2rem;
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    grid-template-columns: repeat(2, 1fr);
   }
   @media screen and (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    grid-template-columns: repeat(3, 1fr);
   }
   @media screen and (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Style for individual project cards */
 .project-card {
   position: relative;
   overflow: hidden;
@@ -423,7 +417,7 @@ button.glitch:hover {
   color: white;
   text-align: center;
   transition: box-shadow 0.3s ease;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   padding: 2rem;
   margin: 2rem;
@@ -432,8 +426,8 @@ button.glitch:hover {
   max-width: 300px;
   width: 100%;
 
-  display: flex; /* Use flexbox layout */
-  flex-direction: column; /* Stack items vertically */
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card h2 {
@@ -449,12 +443,6 @@ button.glitch:hover {
   margin-bottom: 1rem;
 }
 
-// .project-card button {
-//   margin-top: auto;
-//   background-color: red;
-// }
-
-/* Hover effect for project cards */
 .project-card:hover {
   box-shadow: 0 0 2rem var(--primary-color);
   transform: scale(1.05);
@@ -540,9 +528,6 @@ button.glitch:hover {
 .project .timeline-dot {
   background-color: var(--secondary-color);
 }
-
-/*----------------------CONTACT -------------------------------*/
-
 /*----------------------FOOTER -------------------------------*/
 #console {
   position: fixed;
@@ -553,7 +538,7 @@ button.glitch:hover {
   background: #000;
   color: #0f0;
   font-family: "Courier New", monospace;
-  display: none; /* Hide by default */
+  display: none;
   z-index: 9999;
   padding: 1rem;
   box-sizing: border-box;
