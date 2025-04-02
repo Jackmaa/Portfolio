@@ -468,9 +468,9 @@ button.glitch:hover {
   left: 0;
   top: 95px;
   width: 4px;
-  background: #00f5ff;
+  background: var(--primary-color);
   height: var(--timeline-height);
-  max-height: 675px;
+  max-height: 678px;
   transition: height 0.3s ease-in-out;
 }
 
@@ -505,7 +505,7 @@ button.glitch:hover {
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   box-shadow: 0 0 15px var(--primary-color);
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: var(--background-color);
 }
 
 .project {
