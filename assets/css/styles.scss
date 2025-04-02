@@ -50,7 +50,7 @@ h6 {
 }
 :root {
   --primary-color: rgb(0, 255, 255); /* Cyan neon */
-  --secondary-color: rgb(138, 44, 226); /* Electric violet */
+  --secondary-color: rgb(226, 44, 211); /* Electric violet */
   --background-color: hsl(0, 0%, 5%); /* Deep black */
   --glow-color: rgba(0, 255, 255, 0.8); /* Cyan glow */
   --box-shadow: 0 0 10px var(--glow-color), 0 0 40px var(--glow-color);
@@ -424,7 +424,7 @@ button.glitch:hover {
   color: white;
   text-align: center;
   transition: box-shadow 0.3s ease;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   backdrop-filter: blur(10px);
   padding: 2rem;
   margin: 2rem;
@@ -480,6 +480,60 @@ button.glitch:hover {
   opacity: 1;
   filter: blur(10px);
 }
+
+/*----------------------ABOUT -------------------------------*/
+
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
+  border-left: 2px solid var(--primary-color);
+}
+.timeline-item {
+  opacity: 0; /* Caché initialement */
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin: 2rem 1rem;
+}
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+.timeline-content {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--primary-color);
+  background-color: var(--background-color);
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.project {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+.project .timeline-dot {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 12px var(--secondary-color);
+}
+
+/*----------------------CONTACT -------------------------------*/
 
 /*----------------------FOOTER -------------------------------*/
 #console {
