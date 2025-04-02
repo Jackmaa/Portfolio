@@ -469,6 +469,8 @@ button.glitch:hover {
   padding: 1rem;
   box-sizing: border-box;
   overflow-y: auto;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 #console pre.ascii {

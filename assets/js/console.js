@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
         case "help":
           response =
-            "Commandes disponibles : \nhelp \nstatus \nhack \nabout \ncontact \nskills \nclear \nexit";
+            'Commandes disponibles : \nhelp \nsay "your phrase" \nstatus \nhack \nabout \ncontact \nskills \nclear \nexit';
           break;
         case "status":
           response = "System: Online\nCPU: 95%\nMemory: 78%\nDisk: 40% free";
