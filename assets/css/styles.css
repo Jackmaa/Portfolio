@@ -515,7 +515,6 @@ button.glitch:hover {
 
 .project .timeline-dot {
   background-color: var(--secondary-color);
-  box-shadow: 0 0 12px var(--secondary-color);
 }
 
 /*----------------------CONTACT -------------------------------*/
