@@ -551,4 +551,18 @@ button.glitch:hover {
 
 .output {
   margin-bottom: 1rem;
+}
+
+.cyberpunk-footer {
+  background: black;
+  color: cyan;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+#sys-logs {
+  font-size: 12px;
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
 }/*# sourceMappingURL=styles.css.map */

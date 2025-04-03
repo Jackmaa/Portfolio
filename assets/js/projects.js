@@ -71,12 +71,11 @@ function addLightboxEvents() {
 
   infoButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      console.log("Button clicked:", this);
       lightboxTitle.textContent = this.getAttribute("data-name");
       lightboxDescription.textContent = this.getAttribute("data-description");
       lightboxLink.href = this.getAttribute("data-url");
-
       lightbox.style.display = "flex";
+      lightbox.classList.remove("hidden");
     });
   });
 
@@ -90,3 +89,23 @@ function addLightboxEvents() {
     }
   });
 }
+
+document.getElementById("contact-btn").addEventListener("click", function () {
+  document.getElementById("contact-lightbox").style.display = "flex";
+});
+document.getElementById("close-btn").addEventListener("click", function () {
+  document.getElementById("contact-lightbox").style.display = "none";
+});
+
+function generateLog() {
+  const logs = [
+    "[LOG] Connection stabilized...",
+    "[SYS] Memory usage: " + Math.floor(Math.random() * 100) + "%",
+    "[SEC] Firewall engaged.",
+    "[NET] Ping: " + Math.floor(Math.random() * 100) + "ms",
+    "[ERROR] System anomaly detected!",
+  ];
+  document.querySelector("#sys-logs").innerText =
+    logs[Math.floor(Math.random() * logs.length)];
+}
+setInterval(generateLog, 3000);
