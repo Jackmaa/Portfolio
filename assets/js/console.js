@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", function (e) {
     if (e.ctrlKey && e.shiftKey && e.key === "C") {
       e.preventDefault(); // Prevent default action
+      hideConsoleHint(); // Hide the hint if visible
       toggleConsole(); // Show or hide the console
     }
   });
@@ -122,3 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
         : "none";
   }
 });
+
+const hint = document.querySelector(".console-hint");
+setTimeout(() => {
+  document.querySelector(".console-hint")?.remove();
+}, 10000); //
+function hideConsoleHint() {
+  const hint = document.querySelector(".console-hint");
+  if (hint) hint.style.display = "none";
+}
