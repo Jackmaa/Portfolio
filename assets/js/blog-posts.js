@@ -1,14 +1,20 @@
 const blogPosts = [
   {
-    title: "Building nihon-ECF-3: My Manga Library in PHP",
+    title: "Building nihon-ECF-3: Manga Library in PHP",
     date: "2025-03-28",
     tags: ["php", "project", "backend"],
     content: `
   I started this project with one goal: creating a fast, efficient manga library that doesn’t look like it was built in 2009.
-
+    It was the first group project I worked on, and I learned a lot about PHP, MVC architecture. And Group Project meaning the project
+    needs a Lead Developer, and I was the one appointed to lead the project.
+    I had to learn how to manage a team, and how to communicate with them. I also learned how to use Git, Trello, following the Agile methodology, and how to work with a team.
   Stack:
-  - 💾 PHP (MVC + Altorouter)
-  - 🖼️ WebP image optimization
+  - 🖥️ PHP (MVC + Altorouter + Composer)
+  - 🗂️ MySQL (InnoDB)
+  - 📦 Composer (for package management)
+  - 🧪 GSAP 
+  - 🎨 CSS (Sass + BEM)
+  - 🖼️ WebP image optimization (Built by yours truly)
   - 🛠️ JSON API interaction
 
   Code sample:
@@ -64,8 +70,8 @@ const blogPosts = [
   - ChatGPT (of course)
 
   🔧 Terminal Tools
-  - zsh + Oh My Zsh
-  - PNPM over npm/yarn (fight me)
+  - git (...Duh)
+  - npm (for Node stuff)
 
   ✨ Bonus Productivity Boosts
   - Auto Dark Mode
