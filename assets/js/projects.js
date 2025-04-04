@@ -27,11 +27,14 @@ async function fetchProjects() {
       <div class="card-content">
         <h2>${repo.name}</h2>
         <p>${repo.description || "No description available"}</p>
-        <button class="glitch info-btn" data-name="${
-          repo.name
-        }" data-description="${repo.description}" data-url="${repo.html_url}">
+        <button 
+          class="glitch info-btn" 
+          data-name="${repo.name}" 
+          data-description="${repo.description}" 
+          data-url="${repo.html_url}"
+          title="Click to see more. Visual available on GitHub!">
           More Info
-        </button>
+      </button>
       </div>
     `;
     projectsContainer.appendChild(projectCard);
