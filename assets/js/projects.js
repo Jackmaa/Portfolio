@@ -1,5 +1,10 @@
 const username = "Jackmaa";
-const selectedRepos = ["codoc", "ECF-1", "ECF-2", "nihon-ECF-3"]; // Add repo names you want to display
+const selectedRepos = [
+  "codoc",
+  "EclipseEsport-ECF-1",
+  "Eventify-ECF-2",
+  "nihon-ECF-3",
+]; // Add repo names you want to display
 
 async function fetchProjects() {
   const response = await fetch(

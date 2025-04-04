@@ -9,4 +9,5 @@ function generateLog() {
   document.querySelector("#sys-logs").innerText =
     logs[Math.floor(Math.random() * logs.length)];
 }
+generateLog();
 setInterval(generateLog, 3000);

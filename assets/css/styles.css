@@ -16,7 +16,6 @@ body {
   line-height: 1.6rem;
   min-height: 100vh;
   background: var(--background-color);
-  text-align: center;
 }
 
 img {
@@ -555,14 +554,10 @@ button.glitch:hover {
 
 .cyberpunk-footer {
   background: black;
-  color: cyan;
-  text-align: center;
   padding: 1rem;
-  font-family: "Orbitron", sans-serif;
 }
 
 #sys-logs {
-  font-size: 12px;
-  color: #00ff00;
-  font-family: "Courier New", Courier, monospace;
+  color: #33ff99;
+  font-family: "Share Tech Mono", monospace;
 }/*# sourceMappingURL=styles.css.map */
