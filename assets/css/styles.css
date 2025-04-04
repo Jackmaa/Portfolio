@@ -152,14 +152,14 @@ a {
   text-decoration: none;
   text-transform: uppercase;
 }
-a .cyberpunk-link {
+a span.cyberpunk-link {
   text-align: center;
   color: var(--primary-color);
   position: relative;
   display: inline-block;
   transition: color 0.3s ease-in-out;
 }
-a .cyberpunk-link::before, a .cyberpunk-link::after {
+a span.cyberpunk-link::before, a span.cyberpunk-link::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -173,14 +173,14 @@ a .cyberpunk-link::before, a .cyberpunk-link::after {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-a .cyberpunk-link:hover::before, a .cyberpunk-link:hover::after {
+a span.cyberpunk-link:hover::before, a span.cyberpunk-link:hover::after {
   opacity: 0.5;
 }
-a .cyberpunk-link:hover {
+a span.cyberpunk-link:hover {
   color: white;
   animation: glitch 0.2s forwards;
 }
-a .cyberpunk-link:active {
+a span.cyberpunk-link:active {
   transform: scale(0.95);
 }
 

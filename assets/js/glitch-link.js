@@ -42,8 +42,13 @@ function startScrambling(element, text, chars) {
 
 // Setup the hover effect for all elements with class "scrambleText"
 document.addEventListener("DOMContentLoaded", () => {
-  const scrambleLinks = document.querySelectorAll("a span.scrambleText");
+  const scrambleOnLoad = document.querySelector("span#scrambleOnLoad");
+  const scrambleTextOnLoad = scrambleOnLoad.textContent;
+  const scrambleLinks = document.querySelectorAll("span.scrambleText");
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890*#@/*!%&^";
+
+  // Start scrambling the text on load
+  startScrambling(scrambleOnLoad, scrambleTextOnLoad, chars);
 
   // Trigger scramble on mouse enter for each element
   scrambleLinks.forEach((element) => {
@@ -54,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       startScrambling(element, originalText, chars);
     });
   });
-  document.querySelectorAll("button span.scrambleText").forEach((element) => {
+  document.querySelectorAll("span.scrambleText").forEach((element) => {
     const originalText = element.textContent;
     element.parentElement.addEventListener("mouseenter", () => {
       // Start scrambling the text and smoothly transition back after 1 second

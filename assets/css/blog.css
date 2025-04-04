@@ -1,0 +1,58 @@
+body {
+  background: #000;
+  color: #00ff9c;
+  font-family: "Share Tech Mono", monospace;
+  padding: 2rem;
+}
+
+h1 {
+  color: #0ff;
+  font-size: 2rem;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+.log-entry {
+  margin-bottom: 2rem;
+  border-left: 2px solid #00ff9c;
+  padding-left: 1rem;
+}
+
+.log-entry:hover {
+  background: #001a1a;
+}
+
+.log-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.log-meta {
+  font-size: 0.9rem;
+  color: #33ff99;
+  margin-bottom: 0.5rem;
+}
+
+.log-body {
+  white-space: pre-wrap;
+  color: #aaa;
+}
+
+.glitch-tag {
+  color: #39ff14;
+  animation: flicker 0.15s infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+a {
+  color: #00f7ff;
+  text-decoration: underline;
+}/*# sourceMappingURL=blog.css.map */
